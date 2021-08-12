@@ -12,7 +12,7 @@ form.addEventListener('submit', (event) => {
     }
 
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-        location.href = '/index.html?email=' + email.value;
+        location.href = 'index.html?email=' + email.value;
     } else {
         error.removeAttribute("hidden");
         email.style.cssText = "border-color: var(--rose);";
