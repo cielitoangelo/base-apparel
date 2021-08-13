@@ -6,7 +6,6 @@
 
 :root {
     --josefin-sans: 'Josefin Sans', sans-serif;
-
     --brown: #423c3c;
     --white: #ffffff;
     --pinkish-white: #fff1f1;
@@ -18,23 +17,24 @@
     --rose: #b96969;
 }
 
+/*MOBILE FIRST*/
+
 .attribution { font-size: 3vw; text-align: center; margin: 0; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
-/*MOBILE FIRST*/
 body {
     font-family: var(--josefin-sans);
     margin: 0;
 }
 
 header {
-    position: fixed;
+    position: relative;
     z-index: 1;
 }
 
 .logo {
     padding: 7vw;
-    width: 100vw;
+    width: 100%;
     margin: auto;
     background-color: var(--white);
     display: flex;
@@ -48,7 +48,7 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(180deg, var(--white), var(--pinkish-white));
+    margin-top: -12.5vw;
 }
 
 .left {
@@ -56,6 +56,7 @@ main {
     width: 100vw;
     margin: auto;
     order: 2;
+    background-image: linear-gradient(180deg, var(--white), var(--pinkish-white));
 }
 
 .top {
@@ -89,18 +90,17 @@ main {
 }
 
 .right {
-    padding: 20vw 0 0 0;
+    padding: 40vw;
     width: 100vw;
     margin: auto;
     order: 1;
-}
-
-.right > img {
-    width: inherit;
+    background: url("../images/hero-mobile.jpg") bottom center no-repeat;
+    background-size: contain;
 }
 
 .subscribe {
     padding: 10vw 0;
+    position: relative;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -111,22 +111,21 @@ main {
 input {
     background-color: var(--transparent);
     border: 1px solid var(--pink);
-    border-right: 0;
-    border-radius: 10vw 0 0 10vw;
+    border-radius: 10vw;
     padding: 5vw;
-    width: 75vw;
+    width: 100%;
     font-family: inherit;
     font-size: 4vw;
     color: var(--pink);
     outline: none;
     position: absolute;
-    left: 7vw;
+    left: 0;
 }
 
 .error {
     position: absolute;
-    width: 4vw;
-    right: 30vw;
+    width: 5vw;
+    right: 23vw;
 }
 
 .submit {
@@ -135,7 +134,7 @@ input {
     border-radius: 10vw;
     width: 20vw;
     position: absolute;
-    right: 7vw;
+    right: 0;
 }
 
 .submit > img {
@@ -146,4 +145,102 @@ input {
 footer {
     background-color: var(--white);
     padding: 5vw;
+}
+
+@media screen and (min-width: 1000px) {
+    .logo {
+        background-color: var(--transparent);
+        padding: 5vw 15vw;
+    }
+
+    .logo > img {
+        width: 15%;
+    }
+
+    header {
+        position: relative;
+        top: 0;
+        width: 100%;
+        background-color: var(--transparent);
+    }
+
+    main {
+        flex-direction: row;
+        gap: 0;
+        width: 100%;
+        margin-top: -12.2vw;
+    }
+
+    .left {
+        order: 1;
+        background: url("../images/bg-pattern-desktop.svg") left top no-repeat;
+        background-size: cover;
+        width: 60%;
+        padding: 15vw;
+        margin: 0;
+    }
+
+    .intro {
+        font-size:  4vw;
+        letter-spacing: 1vw;
+        text-align: left;
+    }
+
+    .announce {
+        font-size: 1vw;
+        text-align: left;
+        line-height: 2vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    .right {
+        order: 2;
+        width: 40%;
+        padding: 0;
+        margin: 0;
+        background: url("../images/hero-desktop.jpg") center center no-repeat;
+        background-size: cover;
+    }
+
+    .subscribe {
+        padding: 5vw 0;
+    }
+    
+    input {
+        padding: 1.5vw;
+        width: 100%;
+        font-size: 1vw;
+        outline: none;
+        position: absolute;
+        left: 0;
+    }
+    
+    .error {
+        position: absolute;
+        width: 1.5vw;
+        right: 20%;
+    }
+    
+    .submit {
+        border-radius: 10vw;
+        width: 5vw;
+        position: absolute;
+        right: 0;
+    }
+    
+    .submit > img {
+        margin: 1vw auto;
+        width: 1vw;
+    }
+
+    footer {
+        background-color: var(--transparent);
+        padding: 1vw;
+    }
+
+    .attribution {
+        font-size: 1vw;
+        line-height: 2vw;
+    }
 }
