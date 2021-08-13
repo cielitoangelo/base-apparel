@@ -11,7 +11,6 @@
     --pinkish-white: #fff1f1;
     --transparent: #ffffff00;
     --light-pink: #f5b8b7;
-    --light-pink: #f5b8b7;
     --pink: #c08e8d;
     --reddish-pink: #eb8f90;
     --rose: #b96969;
@@ -140,6 +139,14 @@ input {
 .submit > img {
     margin: 3.5vw auto;
     width: 4vw;
+}
+
+.submit:hover {
+    background-image: linear-gradient(90deg, var(--pinkish-white), var(--light-pink));
+}
+
+.submit:active {
+    background-image: linear-gradient(90deg, var(--pink), var(--reddish-pink));
 }
 
 footer {
